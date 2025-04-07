@@ -1,2 +1,2 @@
-# music-shop
+## music-shop
 React Landing Page
