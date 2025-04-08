@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/breakpoints' as *;
+
+#footer {
+	background-color: $secondary-color;
+	
+	.copyright {
+		margin: 0 auto;
+		padding: 20px;
+		text-align: center;
+
+		p {
+			color: rgba(186, 184, 184, 1);
+			font-size: $font-size-12;
+			letter-spacing: 0.08rem;
+			margin: 0 auto;
+			padding: 0;
+
+			@include respond('sm') {
+				font-size: $font-size-14;
+				letter-spacing: 0.1rem;
+			}
+		}
+	}
+}

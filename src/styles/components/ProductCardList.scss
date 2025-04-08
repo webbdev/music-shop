@@ -1,0 +1,69 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+
+#products {
+	padding-top: 4rem;
+
+	@include respond('xs') {
+		padding-top: 4.5rem;
+	}
+
+	@include respond('sm') {
+		padding-top: 5rem;
+	}
+
+	@include respond('md') {
+		padding-top: 5.5rem;
+	}
+
+	@include respond('lg') {
+		padding-top: 6rem;
+	}
+
+	.container {	
+		@include container;
+
+		h2 {
+			margin-bottom: 3.5rem;
+
+			@include respond('xs') {
+				margin-bottom: 4rem;
+			}
+
+			@include respond('sm') {
+				margin-bottom: 4.5rem;
+			}
+
+			@include respond('lg') {
+				margin-bottom: 5rem;
+			}
+
+			@include respond('lg') {
+				margin-bottom: 5.5rem;
+			}
+		}
+
+		.product-card-list {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		
+			@include respond('xs') {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@include respond('sm') {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			@include respond('md') {
+				gap: 2rem;
+			}
+		
+			@include respond('lg') {
+				gap: 2.5rem;
+			}
+		}
+	}
+}

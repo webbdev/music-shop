@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+
+#not-found {
+	text-align: center;
+	padding: 4rem 0;
+
+
+	@include respond('md') {
+		padding: 5.5rem 0;
+	}
+
+	@include respond('lg') {
+		padding: 6rem 0;
+	}
+
+	.container {
+		@include container;
+
+		h2 {
+			margin-bottom: 2rem;
+
+			@include respond('xs') {
+				margin-bottom: 2.25rem;
+			}
+
+			@include respond('md') {
+				margin-bottom: 2.75rem;
+			}
+		}
+
+		p {
+			color: $secondary-color;
+		}
+	}
+}

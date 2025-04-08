@@ -1,0 +1,41 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+
+.banner {
+	// width: 100vw;
+	width: 100%;
+	height: 400px;
+	background: url('src/assets/images/banner-2.jpg');
+	opacity: 0.95;
+
+	@include respond('xs') {
+		height: 420px;
+	}
+
+	@include respond('sm') {
+		height: 440px;
+	}
+
+	@include respond('md') {
+		height: 480px;
+	}
+
+	&.parallax {
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	&.grayscale {
+		opacity: 1;
+		-webkit-filter: grayscale(100%);
+  		filter: grayscale(100%);
+	}
+
+	.container {
+		@include flex-center;
+		height: 100%;
+		// background-color: rgba($color: #000000, $alpha: 0.2);
+	}
+}

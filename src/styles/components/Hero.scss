@@ -1,0 +1,108 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+@use '../abstracts/variables' as *;
+
+
+.hero {
+	width: 100%;
+	height: 100vh;
+	background: url('src/assets/images/banner-1.jpg');
+	max-height: 680px;
+	opacity: 1;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(100%);
+
+	&.parallax {
+		/* Parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	
+	.container {
+		@include flex-center;
+		height: 100%;
+		// background-color: rgba($color: #000000, $alpha: 0.3);
+		background-color: rgba($color: #ffffff, $alpha: 0.1);
+	
+		.content {
+			margin: 20px auto 0;
+			padding: 0 20px;
+			text-align: center;
+			color: rgba($color: #ffffff, $alpha: 1.0);
+
+			h1 {
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: normal;
+				font-size: 2.75rem;
+				line-height: 1.15;
+				letter-spacing: 1px;
+
+				@include respond('sm') {
+					font-size: 4rem;
+					letter-spacing: 1.4px;
+				}
+
+				@include respond('md') {
+					font-size: 5rem;
+					letter-spacing: 1.6px;
+				}
+			
+				@include respond('lg') {
+					font-size: 5.875rem;
+					letter-spacing: 2px;
+				}
+			}
+
+			.hero-link {
+				display: inline-block;
+				margin-top: 1.55rem;
+
+				@include respond('sm') {
+					margin-top: 2rem;
+				}
+
+				@include respond('md') {
+					margin-top: 2.625rem;
+				}
+
+				@include respond('lg') {
+					margin-top: 2.75rem;
+				}
+
+				.angle-down-icon {
+					width: 1.75rem;
+					height: 1.75rem;
+
+					@include respond('sm') {
+						width: 2.15rem;
+						height: 2.15rem;
+					}
+					
+					@include respond('md') {
+						width: 2.25rem;
+						height: 2.25rem;
+					}
+
+					@include respond('lg') {
+						width: 2.5rem;
+						height: 2.5rem;
+					}
+
+					svg {
+						width: 100%;
+						height: 100%;
+						fill: rgba(250, 250, 250, 1);
+						transition: transform 0.3s ease;
+
+						&:hover {
+							transform: translateY(5px);
+						}
+					}
+				}
+			}
+		}
+	}
+}
