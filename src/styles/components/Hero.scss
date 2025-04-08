@@ -12,13 +12,19 @@
 	opacity: 1;
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   	filter: grayscale(100%);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
 	&.parallax {
 		/* Parallax scrolling effect */
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-attachment: scroll;
+	}
+
+	@include respond('sm') {
+		&.parallax {
+			background-attachment: fixed;
+		}
 	}
 	
 	.container {
