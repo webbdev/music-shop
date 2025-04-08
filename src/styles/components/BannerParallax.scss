@@ -7,6 +7,9 @@
 	height: 400px;
 	background-color: rgba(0, 0, 0, 0.4);
 	background: url('/images/banner-2.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	opacity: 0.95;
 
 	@include respond('xs') {
@@ -22,10 +25,13 @@
 	}
 
 	&.parallax {
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-attachment: scroll;
+	}
+
+	@include respond('sm') {
+		&.parallax {
+			background-attachment: fixed;
+		}
 	}
 
 	&.grayscale {
@@ -37,6 +43,5 @@
 	.container {
 		@include flex-center;
 		height: 100%;
-		// background-color: rgba($color: #000000, $alpha: 0.2);
 	}
 }
