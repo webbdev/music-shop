@@ -34,7 +34,7 @@ const Services = () => {
 					</div>
 				</div>
 			</div>
-			<BannerParallax className="grayscale" />
+			<BannerParallax />
 		</section>
 	)
 }
