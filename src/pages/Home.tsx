@@ -8,8 +8,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Hero />
-      <ProductCardList />
       <About />
+      <ProductCardList />
       <Services />
       <BottomSection />
     </>

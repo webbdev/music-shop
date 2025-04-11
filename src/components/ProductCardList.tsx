@@ -29,7 +29,11 @@ const ProductCardList: React.FC = () => {
 	return (
 		<section id="products">
 			<div className="container">
-				<h2>Our Products</h2>
+				<div className='intro'>
+					<h2>What We Sell</h2>
+					<p>Instruments, accessories, and music essentials for every level.</p>
+				</div>
+				
 				<div className="product-card-list">
 					{products.length > 0 ? (
 						products.map((product) => (

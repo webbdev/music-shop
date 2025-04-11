@@ -1,19 +1,19 @@
 import BannerParallax from './BannerParallax';
 
 const services = {
-	heading: "Our Services",
+	heading: "What We Offer",
 	all_services: [
 		{
-			title: "Sales",
-			description: "Mauris quis sollicitudin elit. Mauris facilisis commodo gravida. Cras iaculis quam urna, ut suscipit tellus semper at. Nulla mattis nisl ac dui sodales vehicula. Vestibulum ullamcorper id erat nec congue."
+			"title": "Sales",
+			"description": "Instruments, accessories, and all things music-find quality gear for every musician under one roof."
 		},
 		{
-			title: "Repairs",
-			description: "Etiam consectetur ex eget nibh posuere, et pulvinar neque fringilla. Proin euismod dictum turpis. Duis sollicitudin sit amet orci ut cursus. Proin iaculis orci in malesuada aliquam. Morbi efficitur ultrices turpis in mattis."
+			"title": "Repairs",
+			"description": "From minor fixes to full restorations, we’ll keep your instruments in top playing condition."
 		},
 		{
-			title: "Training",
-			description: "Mauris quis sollicitudin elit. Mauris facilisis commodo gravida. Nam vulputate ipsum et lacinia consequat. Duis sollicitudin sit amet orci ut cursus. Nam vulputate ipsum et lacinia consequat."
+			"title": "Lessons",
+			"description": "Personalized music lessons for all ages and skill levels-learn to play with confidence and joy."
 		}
 	]
 }
@@ -23,18 +23,20 @@ const Services = () => {
 		<section id="services">
 			<div className="container">
 				<div className="content">
-					<h2>{services.heading}</h2>
+					<div className='intro'>
+						<h2>{services.heading}</h2>
+					</div>
 					<div className="cards">
 						{services.all_services.map((service, index) =>
 							<div className="card" key={index}>
-								<h3>{service.title}</h3>
+								<p className='sub-heading'>{service.title}</p>
 								<p className="card-description">{service.description}</p>
 							</div>
 						)}
 					</div>
 				</div>
 			</div>
-			<BannerParallax />
+			<BannerParallax className="grayscale" />
 		</section>
 	)
 }

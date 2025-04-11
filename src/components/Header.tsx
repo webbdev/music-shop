@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const sections = ['products', 'about', 'services', 'contact'];
+const sections = ['about', 'products', 'services', 'contact'];
 
 const Header: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);

@@ -20,7 +20,7 @@
 	width: 100%;
 	max-width: $container-width;
 	margin: 0 auto;
-	padding: 0 1.25rem;
+	padding: 0 1.5rem;
 
 	@include respond('sm') {
 		padding: 0 2rem;

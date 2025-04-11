@@ -3,44 +3,63 @@
 @use '../abstracts/breakpoints' as *;
 
 #products {
-	padding-top: 4rem;
-
-	@include respond('xs') {
-		padding-top: 4.5rem;
-	}
+	background: $background-color;
+	padding-top: 35px;
+	padding-bottom: 1.5rem;
 
 	@include respond('sm') {
-		padding-top: 5rem;
+		padding-top: 50px;
 	}
 
 	@include respond('md') {
-		padding-top: 5.5rem;
+		padding-top: 62px;
+		padding-bottom: 2.5rem;
 	}
 
 	@include respond('lg') {
-		padding-top: 6rem;
+		padding-top: 72px;
+		padding-bottom: 3.5rem;
 	}
 
 	.container {	
 		@include container;
 
-		h2 {
-			margin-bottom: 3.5rem;
-
-			@include respond('xs') {
-				margin-bottom: 4rem;
-			}
+		.intro {
+			margin: 0 auto;
+			text-align: center;
+			padding-bottom: 30px;
 
 			@include respond('sm') {
-				margin-bottom: 4.5rem;
+				padding-bottom: 36px;
 			}
 
-			@include respond('lg') {
-				margin-bottom: 5rem;
+			@include respond('md') {
+				padding-bottom: 50px;
 			}
 
-			@include respond('lg') {
-				margin-bottom: 5.5rem;
+			h2 {
+				margin-bottom: 16px;
+
+				@include respond('md') {
+					margin-bottom: 22px;
+				}
+			}
+
+			p {
+				max-width: 280px;
+				margin: 0 auto;
+				text-align: center;
+				font-size: 16px;
+				line-height: normal;
+
+				@include respond('sm') {
+					font-size: 17px;
+				}
+
+				@include respond('md') {
+					max-width: 400px;
+					font-size: 20px;
+				}
 			}
 		}
 
@@ -58,11 +77,11 @@
 			}
 
 			@include respond('md') {
-				gap: 2rem;
+				gap: 2.5rem;
 			}
 		
 			@include respond('lg') {
-				gap: 2.5rem;
+				gap: 3.5rem;
 			}
 		}
 	}

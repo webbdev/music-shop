@@ -4,22 +4,19 @@
 
 #contact {
 	text-align: center;
-	padding: 4rem 0 2rem;
+	background-color: $color-light-grey;
+	padding: 60px 0 24px;
 
-	@include respond('xs') {
-		padding: 4.5rem 0 2rem;
-	}
+	// @include respond('xs') {
+	// 	padding-bottom: 2rem;
+	// }
 
 	@include respond('sm') {
-		padding: 5rem 0;
+		padding: 70px 0;
 	}
 
 	@include respond('md') {
-		padding: 5.5rem 0;
-	}
-
-	@include respond('lg') {
-		padding: 6rem 0;
+		padding: 5.625rem 0 6rem;
 	}
 
 	.container {
@@ -28,21 +25,22 @@
 		h2 {
 			margin-bottom: 2.75rem;
 
-			@include respond('xs') {
-				margin-bottom: 3rem;
+			@include respond('sm') {
+				margin-bottom: 3.25rem;
 			}
 
 			@include respond('md') {
-				margin-bottom: 3.5rem;
+				margin-bottom: 4rem;
 			}
 		}
 
 		.content {
 			max-width: 280px;
 			margin: 0 auto;
+			text-align: center;
 
 			@include respond('sm') {
-				max-width: 900px;
+				max-width: 760px;
 			}
 
 			.cards {
@@ -51,31 +49,63 @@
 				justify-content: space-around;
 			
 				@include respond('sm') {
-					grid-template-columns: repeat(3, 1fr);
+					grid-template-columns: repeat(2, 1fr);
 					max-width: 100%;
+					gap: 120px;
+				}
+
+				@include respond('md') {
+					grid-template-columns: repeat(2, 1fr);
+					max-width: 100%;
+					gap: 200px;
 				}
 			
 				.card {
 					background: transparent;
 					padding: 0 1rem;
-					margin-bottom: 3.5rem;
+					margin-bottom: 2.5rem;
 					text-align: center;
 		
 					@include respond('sm') {
 						margin-bottom: 0;
 					}
-				
-					h4 {
-						margin-bottom: 1.188rem;
 
-						@include respond('md') {
-							margin-bottom: 1.25rem;
+					.card-1 {
+						margin-bottom: 2.5rem;
+
+						@include respond('sm') {
+							margin-bottom: 40px;
+						}
+					}
+				
+					.sub-heading {
+						margin-bottom: 8px;
+						text-align: center;
+
+						@include respond('sm') {
+							text-align: left;
+						}
+
+						span {
+							font-family: $font-family;
+							font-size: 14px;
+							font-weight: normal;
 						}
 					}
 				
 					p {
-						color: $secondary-color;
-						line-height: 1.7;
+						text-align: center;
+						font-size: 23px;
+						line-height: 1.5;
+
+						@include respond('sm') {
+							text-align: left;
+						}
+
+						@include respond('md') {
+							text-align: left;
+							font-size: 24px;
+						}
 					}
 				}
 			}

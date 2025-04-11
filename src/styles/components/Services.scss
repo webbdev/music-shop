@@ -3,23 +3,18 @@
 @use '../abstracts/variables' as *;
 
 #services {
+	background-color: $color-light-pink;
 	text-align: center;
-	padding-top: 4rem;
-
-	@include respond('xs') {
-		padding-top: 4.5rem;
-	}
+	padding-top: 60px;
+	padding-bottom: 33px;
 
 	@include respond('sm') {
-		padding-top: 5rem;
+		padding-top: 70px;
+		padding-bottom: 0;
 	}
 
 	@include respond('md') {
-		padding-top: 5.5rem;
-	}
-
-	@include respond('lg') {
-		padding-top: 6rem;
+		padding-top: 90px;
 	}
 
 	.container {
@@ -27,34 +22,38 @@
 	}
 
 	.content {
-		margin: 0 auto 3.5rem;
-
-		@include respond('xs') {
-			margin: 0 auto 4rem;
-		}
+		margin: 0 auto;
 	
 		@include respond('sm') {
-			margin: 0 auto 4.5rem;
+			margin: 0 auto 90px;
 		}
 
 		@include respond('md') {
-			margin: 0 auto 5rem;
+			margin: 0 auto 120px;
 		}
 
 		@include respond('lg') {
-			margin: 0 auto 5.5rem;
+			margin: 0 auto 130px;
 		}
 
-		h2 {
-			color: $secondary-color;
-			margin-bottom: 2.75rem;
+		.intro {
+			margin: 0 auto;
+			text-align: center;
 
-			@include respond('xs') {
-				margin-bottom: 3rem;
-			}
+			h2 {
+				margin-bottom: 34px;
 
-			@include respond('md') {
-				margin-bottom: 3.5rem;
+				@include respond('sm') {
+					margin-bottom: 50px;
+				}
+	
+				@include respond('md') {
+					margin-bottom: 60px;
+				}
+
+				@include respond('lg') {
+					margin-bottom: 68px;
+				}
 			}
 		}
 	}
@@ -62,44 +61,60 @@
 	.cards {
 		display: grid;
 		grid-template-columns: 1fr;
-		max-width: 600px;
+		max-width: 380px;
 		margin: 0 auto;
+		justify-content: center;
 	
-		@include respond('md') {
+		@include respond('sm') {
 			grid-template-columns: repeat(3, 1fr);
-			max-width: 100%;
+			max-width: 1100px;
 		}
 	
 		.card {
-			background: transparent;
-			padding: 0 1rem;
-			margin-bottom: 2.75rem;
+			padding: 0 20px;
+			margin-bottom: 2rem;
 			text-align: center;
 
+			@include respond('sm') {
+				padding: 0 1.5rem;
+				margin-bottom: 0;
+				border-right: 1px dashed $primary-color;
+			}
+
 			@include respond('md') {
-				padding: 0 2.5rem;
-				margin-bottom: 2rem;
-				border-right: 1px dashed #eee;
+				padding: 0 3.25rem;
 			}
 
 			&:last-child {
-				@include respond('md') {
+				@include respond('sm') {
 					border-right: 0;
 				}
 			}
-		
-			h3 {
-				margin-bottom: 1.375rem;
-				color: #222;
+
+			.sub-heading {
+				font-size: 19px;
+				font-weight: 600;
+				letter-spacing: -0.7px;
+				list-style: normal;
+				margin-bottom: 10px;
+
+				@include respond('sm') {
+					margin-bottom: 15px;
+				}
 
 				@include respond('md') {
-					margin-bottom: 1.5rem;
+					font-size: 24px;
+					margin-bottom: 24px;
 				}
 			}
-		
-			.card-description {
-				color: $secondary-color;
-			}
+		}
+	}
+
+	.banner.parallax {
+		display: none;
+
+		@include respond('sm') {
+			display: block;
 		}
 	}
 }

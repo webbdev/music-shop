@@ -1,0 +1,68 @@
+@use '../abstracts/breakpoints' as *;
+
+.hero-banner {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	overflow: hidden;
+	
+	.banner-container {
+		width: 100%;
+		max-width: 1100px;
+		text-align: center;
+		margin: 0 auto;
+
+		@include respond('xs') {
+			padding: 0 1.5rem;
+		}
+
+		@include respond('sm') {
+			padding: 0 2rem;
+		}
+
+		.banner-inner {
+			margin: 0 auto;
+			text-align: center;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			justify-content: center;
+			width: auto;
+
+			@include respond('xs') {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 0.4rem;
+			}
+
+			@include respond('sm') {
+				gap: 0.5rem;
+			}
+
+			.image {
+				position: relative;
+				overflow: hidden;
+			
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					display: block;
+					max-height: 500px;
+					opacity: 0.95;
+					transition: transform 0.5s ease-out;
+  					will-change: transform;
+				}
+
+				&.image-2 {
+					display: none;
+
+					@include respond('xs') {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+}
+
