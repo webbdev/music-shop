@@ -6,7 +6,7 @@
 	background-color: $color-light-pink;
 	text-align: center;
 	padding-top: 60px;
-	padding-bottom: 30px;
+	padding-bottom: 26px;
 
 	@include respond('sm') {
 		padding-top: 70px;
@@ -18,15 +18,7 @@
 	}
 
 	.container {
-		width: 100%;
-		margin: 0 auto;
-		padding: 0;
-
-		@include respond('sm') {
-			max-width: $container-width;
-			padding: 0 2rem;
-		}
-		
+		@include container;
 	}
 
 	.content {
@@ -49,7 +41,7 @@
 			text-align: center;
 
 			h2 {
-				margin-bottom: 44px;
+				margin-bottom: 46px;
 
 				@include respond('sm') {
 					margin-bottom: 50px;
@@ -69,12 +61,9 @@
 	.cards {
 		display: grid;
 		grid-template-columns: 1fr;
+		max-width: 380px;
 		margin: 0 auto;
 		justify-content: center;
-
-		@include respond('xs') {
-			max-width: 380px;
-		}
 	
 		@include respond('sm') {
 			grid-template-columns: repeat(3, 1fr);
