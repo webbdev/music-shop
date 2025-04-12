@@ -60,7 +60,7 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-	font-size: 32px;
+	font-size: 36px;
 
 	@include respond('sm') {
 		font-size: 40px;
@@ -74,14 +74,15 @@ h2 {
 p {
 	color: $secondary-color;
 	font-family: $font-family;
-	font-size: $font-size-14;
-	font-weight: 300;
+	font-size: $font-size-16;
+	font-weight: normal;
 	line-height: 1.6;
 	letter-spacing: normal;
 	text-wrap: pretty;
 
 	@include respond('sm') {
-		font-size: $font-size-15;
+		font-size: $font-size-16;
+		font-weight: 300;
 	}
 
 	@include respond('md') {

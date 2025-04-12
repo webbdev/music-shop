@@ -38,6 +38,10 @@
 				gap: 0.5rem;
 			}
 
+			@include respond('md') {
+				gap: 0.625rem;
+			}
+
 			.image {
 				position: relative;
 				overflow: hidden;
@@ -53,7 +57,7 @@
   					will-change: transform;
 				}
 
-				&.image-2 {
+				&.image-1 {
 					display: none;
 
 					@include respond('xs') {
