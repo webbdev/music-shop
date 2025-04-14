@@ -7,7 +7,7 @@ const Map = () => {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1, ease: "easeOut" }}
-			viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of the component is in view
+			viewport={{ once: true, amount: 0.3 }}
 		>
 			<div className="container">
 				<iframe 

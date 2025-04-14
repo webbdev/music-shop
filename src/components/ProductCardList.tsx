@@ -39,8 +39,8 @@ const ProductCardList: React.FC = () => {
 					className="product-card-list"
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
-					viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of the component is in view
+					transition={{ duration: 1, ease: 'easeOut' }}
+					viewport={{ once: true, amount: 0.3 }}
 				>
 					{products.length > 0 ? (
 						products.map((product) => (
