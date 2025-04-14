@@ -5,7 +5,7 @@
 #products {
 	background: $background-color;
 	padding-top: 35px;
-	padding-bottom: 2.5rem;
+	padding-bottom: 2rem;
 
 	@include respond('xs') {
 		padding-bottom: 1.5rem;
@@ -71,7 +71,7 @@
 			display: grid;
 			grid-template-columns: 1fr;
 			gap: 2rem;
-			padding: 0 16px;
+			padding: 0 8px;
 		
 			@include respond('xs') {
 				grid-template-columns: repeat(2, 1fr);

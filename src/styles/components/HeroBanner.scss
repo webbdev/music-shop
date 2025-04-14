@@ -25,7 +25,7 @@
 			text-align: center;
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: 1.5rem;
+			gap: 1.25rem;
 			justify-content: center;
 			width: auto;
 
@@ -52,12 +52,12 @@
 					object-fit: cover;
 					display: block;
 					max-height: 500px;
-					opacity: 0.95;
-					transition: transform 0.5s ease-out;
+					opacity: 1;
+					transition: transform 0.8s ease-out;
   					will-change: transform;
 				}
 
-				&.image-1 {
+				&.image-2 {
 					display: none;
 
 					@include respond('xs') {

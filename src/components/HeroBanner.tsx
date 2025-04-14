@@ -21,7 +21,7 @@ const HeroBanner = () => {
 
 			animationFrameId.current = requestAnimationFrame(() => {
 				const scrollY = window.scrollY;
-				const scale = Math.min(1 + scrollY * 0.0003, 1.1); // Adjust scaling factor as needed
+				const scale = Math.min(1 + scrollY * 0.0005, 1.3);
 
 				if (isSmallDevice) {
 					if (image1Ref.current) {
@@ -46,7 +46,7 @@ const HeroBanner = () => {
 			if (animationFrameId.current !== null) {
 				cancelAnimationFrame(animationFrameId.current);
 			}
-		window.removeEventListener("scroll", handleScroll);
+			window.removeEventListener("scroll", handleScroll);
 		};
 	}, [isSmallDevice]);
 
@@ -55,13 +55,25 @@ const HeroBanner = () => {
 			<div className="banner-container">
 				<div className="banner-inner">
 					<div className="image image-1">
-						<img ref={image1Ref} src={banner} alt="Banner 1" />
+						<img
+							ref={image1Ref}
+							src={banner}
+							alt="Banner 1"
+						/>
 					</div>
 					<div className="image image-2">
-						<img ref={image2Ref} src={banner2} alt="Banner 2" />
+						<img
+							ref={image2Ref}
+							src={banner2}
+							alt="Banner 2"
+						/>
 					</div>
 					<div className="image image-3">
-						<img ref={image3Ref} src={banner3} alt="Banner 3" />
+						<img
+							ref={image3Ref}
+							src={banner3}
+							alt="Banner 3"
+						/>
 					</div>
 				</div>
 			</div>
