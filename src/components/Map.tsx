@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
+
 const Map = () => {
 	return (
-		<div className="map">
+		<motion.div 
+			className="map"
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			transition={{ duration: 1, ease: "easeOut" }}
+			viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of the component is in view
+		>
 			<div className="container">
 				<iframe 
 					title="Google Map"
@@ -13,7 +21,7 @@ const Map = () => {
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

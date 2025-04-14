@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { Product } from '../types/product';
 import Spinner from './Spinner';
+import { motion } from 'framer-motion';
 
 const ProductCardList: React.FC = () => {
 	const [products, setProducts] = useState<Product[]>([]);
@@ -34,7 +35,13 @@ const ProductCardList: React.FC = () => {
 					<p>Instruments, accessories, and music essentials for every level.</p>
 				</div>
 				
-				<div className="product-card-list">
+				<motion.div 
+					className="product-card-list"
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
+					viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of the component is in view
+				>
 					{products.length > 0 ? (
 						products.map((product) => (
 							<ProductCard key={product.id} product={product} />
@@ -42,7 +49,7 @@ const ProductCardList: React.FC = () => {
 					) : (
 						''
 					)}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

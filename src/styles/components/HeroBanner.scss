@@ -5,6 +5,12 @@
 	text-align: center;
 	width: 100%;
 	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.8s ease-in-out;
+
+	&.fade-in {
+		opacity: 1;
+	}
 	
 	.banner-container {
 		width: 100%;
@@ -67,6 +73,4 @@
 			}
 		}
 	}
-
 }
-

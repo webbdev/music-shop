@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 
 const about = {
 	heading: "About Us",
@@ -12,12 +13,20 @@ const About = () => {
 		<section id="about">
 			<div className="about">
 				<div className="container">
-					<div className="content">
+					<motion.div 
+						className="content"
+						initial={{ opacity: 0, y: 40 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+						viewport={{ once: true, amount: 0.3 }}
+					>
 						<h2>{about.heading}</h2>
 						{about.description.map((item, index) => 
-							<p key={index}>{item}</p>
+							<p key={index}>
+								{item}
+							</p>
 						)}
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>
