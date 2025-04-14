@@ -15,10 +15,10 @@ const About = () => {
 				<div className="container">
 					<motion.div 
 						className="content"
-						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-						viewport={{ once: true, amount: 0.3 }}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1, ease: 'easeOut' }}
+						viewport={{ amount: 0.3 }}
 					>
 						<h2>{about.heading}</h2>
 						{about.description.map((item, index) => 

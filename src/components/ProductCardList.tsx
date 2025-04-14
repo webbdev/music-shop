@@ -48,13 +48,14 @@ const ProductCardList: React.FC = () => {
 						products.map((product, index) => (
 							<motion.div
 								key={product.id}
-								initial={{ opacity: 0, y: 20 }}
+								initial={{ opacity: 0, y: 10 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{
 									duration: 0.6,
 									ease: 'easeOut',
 									delay: index * 0.2, // Staggered delay for each card
 								}}
+								viewport={{ once: true, amount: 0.3 }}
 							>
 								<ProductCard product={product} />
 							</motion.div>
