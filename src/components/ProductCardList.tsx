@@ -30,24 +30,37 @@ const ProductCardList: React.FC = () => {
 	return (
 		<section id="products">
 			<div className="container">
-				<div className='intro'>
+				<div className="intro">
 					<h2>What We Sell</h2>
 					<p>Instruments, accessories, and music essentials for every level.</p>
 				</div>
-				
-				<motion.div 
+
+				{/* Lazy load the entire product list */}
+				<motion.div
 					className="product-card-list"
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 1, ease: 'easeOut' }}
 					viewport={{ once: true, amount: 0.3 }}
 				>
+					{/* Iterate over each product to lazy load individual product cards */}
 					{products.length > 0 ? (
-						products.map((product) => (
-							<ProductCard key={product.id} product={product} />
+						products.map((product, index) => (
+							<motion.div
+								key={product.id}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{
+									duration: 0.6,
+									ease: 'easeOut',
+									delay: index * 0.2, // Staggered delay for each card
+								}}
+							>
+								<ProductCard product={product} />
+							</motion.div>
 						))
 					) : (
-						''
+						<p>No products available.</p>
 					)}
 				</motion.div>
 			</div>
