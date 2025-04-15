@@ -1,10 +1,25 @@
+import { motion } from "framer-motion";
+
 const Contact = () => {
 	return (
 		<section id="contact">
 			<div className="container">
-				<h2>Get in Touch</h2>
+				<motion.h2
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1, ease: 'easeOut' }}
+					viewport={{ once: true, amount: 0.3 }}
+				>
+					Get in Touch
+				</motion.h2>
 				<div className="content">
-					<div className="cards">
+					<motion.div 
+						className="cards"
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1, ease: 'easeOut' }}
+						viewport={{ once: true, amount: 0.3 }}
+					>
 						<div className="card">
 
 							<div className="card-1">
@@ -34,7 +49,7 @@ const Contact = () => {
 								<p>10:00am - 10:00pm</p>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

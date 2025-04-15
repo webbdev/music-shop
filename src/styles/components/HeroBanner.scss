@@ -26,6 +26,14 @@
 			padding: 0 2rem;
 		}
 
+		@include respond('lg') {
+			max-width: 1160px;
+		}
+
+		@include respond('xl') {
+			max-width: 1180px;
+		}
+
 		.banner-inner {
 			margin: 0 auto;
 			text-align: center;

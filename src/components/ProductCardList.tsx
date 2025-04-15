@@ -30,10 +30,16 @@ const ProductCardList: React.FC = () => {
 	return (
 		<section id="products">
 			<div className="container">
-				<div className="intro">
+				<motion.div 
+					className="intro"
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1, ease: 'easeOut' }}
+					viewport={{ once: true, amount: 0.3 }}
+				>
 					<h2>What We Sell</h2>
 					<p>Instruments, accessories, and music essentials for every level.</p>
-				</div>
+				</motion.div>
 
 				{/* Lazy load the entire product list */}
 				<div className="product-card-list">
@@ -44,11 +50,7 @@ const ProductCardList: React.FC = () => {
 								key={product.id}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
-								transition={{
-									duration: 0.6,
-									ease: 'easeOut',
-									delay: index * 0.2, // Staggered delay for each card
-								}}
+								transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.2, }}
 								viewport={{ once: true, amount: 0.3 }}
 							>
 								<ProductCard product={product} />
