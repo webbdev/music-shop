@@ -91,5 +91,63 @@
 				gap: 3.5rem;
 			}
 		}
+
+		.button-container {
+			margin: 55px auto 30px;
+			text-align: center;
+
+			@include respond('xs') {
+				margin: 55px auto 40px;
+			}
+
+			@include respond('md') {
+				margin: 70px auto 45px;
+			}
+
+			@include respond('lg') {
+				margin: 75px auto 45px;
+			}
+
+			.button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 160px;
+				height: 50px;
+				background-color: #fff;
+				border: 4px solid $color-dark-red;
+				color: $color-dark-red;
+				margin: 0 auto;
+				text-align: center;
+				transition: all 0.4s ease-out;
+				cursor: pointer;
+				
+				@include respond('sm') {
+					width: 205px;
+					height: 60px;
+				}
+
+				&:hover {
+					background-color: $color-dark-red;
+					color: #fff;
+				}
+
+				span {
+					font-family: $font-family-2;
+					font-weight: 600;
+					font-size: 18px;
+				}
+			}
+		}
+
+		.spinner-container {
+			margin: 3rem auto 1rem;
+			display: flex;
+			justify-content: center;
+
+			@include respond('md') {
+				margin: 3.5rem auto 2rem;
+			}
+		}
 	}
 }

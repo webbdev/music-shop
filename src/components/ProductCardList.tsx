@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 const ProductCardList: React.FC = () => {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
+	const [loadingMore, setLoadingMore] = useState<boolean>(false);
+	const [visibleCount, setVisibleCount] = useState<number>(9);
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -24,6 +26,14 @@ const ProductCardList: React.FC = () => {
 
 		fetchProducts();
 	}, []);
+
+	const handleLoadMore = () => {
+		setLoadingMore(true);
+		setTimeout(() => {
+			setVisibleCount((prev) => Math.min(prev + 9, products.length));
+			setLoadingMore(false);
+		}, 1000);
+	};
 
 	if (loading) return <Spinner />;
 
@@ -43,9 +53,7 @@ const ProductCardList: React.FC = () => {
 
 				{/* Lazy load the entire product list */}
 				<div className="product-card-list">
-					{/* Iterate over each product to lazy load individual product cards */}
-					{products.length > 0 ? (
-						products.map((product, index) => (
+					{products.slice(0, visibleCount).map((product, index) => (
 							<motion.div
 								key={product.id}
 								initial={{ opacity: 0, y: 20 }}
@@ -55,11 +63,23 @@ const ProductCardList: React.FC = () => {
 							>
 								<ProductCard product={product} />
 							</motion.div>
-						))
-					) : (
-						<p>No products available.</p>
-					)}
+						))}
 				</div>
+
+				{/* Spinner under the list */}
+				{loadingMore && (
+					<div className="spinner-container">
+						<Spinner />
+					</div>
+				)}
+				
+				{visibleCount < products.length && !loadingMore && (
+					<div className='button-container'>
+						<a className='button load-more' onClick={handleLoadMore}>
+							<span>Load More</span>
+						</a>
+					</div>
+				)}
 			</div>
 		</section>
 	);
