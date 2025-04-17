@@ -14,7 +14,7 @@
 	}
 
 	@include respond('md') {
-		padding-top: 90px;
+		padding-top: 100px;
 	}
 
 	.container {
@@ -29,10 +29,6 @@
 		}
 
 		@include respond('md') {
-			margin: 0 auto 120px;
-		}
-
-		@include respond('lg') {
 			margin: 0 auto 130px;
 		}
 
@@ -48,11 +44,7 @@
 				}
 	
 				@include respond('md') {
-					margin-bottom: 60px;
-				}
-
-				@include respond('lg') {
-					margin-bottom: 68px;
+					margin-bottom: 72px;
 				}
 			}
 		}
