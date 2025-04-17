@@ -61,7 +61,7 @@ const ProductCardList: React.FC = () => {
 								transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.2, }}
 								viewport={{ once: true, amount: 0.3 }}
 							>
-								<ProductCard product={product} />
+								<ProductCard key={product.id} product={product} index={index} />
 							</motion.div>
 						))}
 				</div>
