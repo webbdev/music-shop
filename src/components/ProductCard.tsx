@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Product } from '../types/product';
+import useWindowDimensions from '../hook/useWindowDimensions';
 
 interface ProductCardProps {
 	product: Product;
@@ -8,18 +9,16 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
 	const imageRef = useRef<HTMLImageElement | null>(null);
+	const { width } = useWindowDimensions();
+	const isSmallDevice = width < 480;
 
 	useEffect(() => {
-		// Only apply scale effect for even (or odd) indexed items
-		const isTarget = index % 2 === 0; // change to `% 2 !== 0` for odd, `% 2 === 0`for even
-		if (!isTarget) return;
+		if (!isSmallDevice || index % 2 !== 0) return;
 
 		const image = imageRef.current;
 		if (!image) return;
 
 		const handleScroll = () => {
-			if (!image) return;
-
 			const rect = image.getBoundingClientRect();
 			const windowHeight = window.innerHeight;
 
@@ -32,33 +31,28 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
 			}
 		};
 
-		window.addEventListener('scroll', handleScroll);
+		const onScroll = () => requestAnimationFrame(handleScroll);
+
+		window.addEventListener('scroll', onScroll);
 		handleScroll();
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('scroll', onScroll);
 		};
-	}, [index]);
+	}, [index, isSmallDevice]);
+
+	// const isHoverTarget = !isSmallDevice && index % 2 === 0;
 
 	return (
 
-		<div className="product-card">
-			<a>
-				<div className='product-image'>
-					<img 
-						ref={imageRef}
-						src={product.image} 
-						alt={product.name}
-					/>
-					<div className='overlay'>
-						<div className='text'>
-							<span>
-								{product.name}
-							</span>
-						</div>
-					</div>	
-				</div>
-			</a>	
+		<div className='product-card'>
+			<div className='product-image'>
+				<img 
+					ref={imageRef}
+					src={product.image} 
+					alt={product.name}
+				/>
+			</div>
 		</div>
 	)
 };

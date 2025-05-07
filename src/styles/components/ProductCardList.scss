@@ -8,21 +8,22 @@
 	padding-bottom: 2rem;
 
 	@include respond('xs') {
-		padding-bottom: 1.5rem;
+		padding-bottom: 4.5rem;
 	}
 
 	@include respond('sm') {
 		padding-top: 50px;
+		padding-bottom: 4.5rem;
 	}
 
 	@include respond('md') {
 		padding-top: 62px;
-		padding-bottom: 2.5rem;
+		padding-bottom: 6.5rem;
 	}
 
 	@include respond('lg') {
 		padding-top: 72px;
-		padding-bottom: 3.5rem;
+		padding-bottom: 6.5rem;
 	}
 
 	.container {	
@@ -68,27 +69,25 @@
 		}
 
 		.product-card-list {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 2rem;
+			column-count: 1;
+			column-gap: 1.5rem;
 			padding: 0 8px;
 		
 			@include respond('xs') {
-				grid-template-columns: repeat(2, 1fr);
-				gap: 1.5rem;
-				padding: 0;
+				column-count: 2;
 			}
-
+		
 			@include respond('sm') {
-				grid-template-columns: repeat(3, 1fr);
+				column-count: 3;
+				// column-gap: 1.5rem;
 			}
-
+		
 			@include respond('md') {
-				gap: 2.5rem;
+				column-gap: 2rem;
 			}
 		
 			@include respond('lg') {
-				gap: 3.5rem;
+				column-gap: 2.5rem;
 			}
 		}
 
