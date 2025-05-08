@@ -8,22 +8,22 @@
 	padding-bottom: 2rem;
 
 	@include respond('xs') {
-		padding-bottom: 4.5rem;
+		padding-bottom: 2rem;
 	}
 
 	@include respond('sm') {
 		padding-top: 50px;
-		padding-bottom: 4.5rem;
+		padding-bottom: 3.5rem;
 	}
 
 	@include respond('md') {
 		padding-top: 62px;
-		padding-bottom: 6.5rem;
+		padding-bottom: 4rem;
 	}
 
 	@include respond('lg') {
 		padding-top: 72px;
-		padding-bottom: 6.5rem;
+		padding-bottom: 4.5rem;
 	}
 
 	.container {	
@@ -42,6 +42,19 @@
 				padding-bottom: 50px;
 			}
 
+			.bottom-border {
+				margin: 0 8px;
+				// padding-bottom: 32px;
+				// border-bottom: 4px solid $color-dark-red;
+			}
+
+			&.product-gallery {
+				h3 {
+					font-size: 40px;
+					margin-bottom: 16px;
+				}
+			}
+
 			h2 {
 				margin-bottom: 16px;
 
@@ -57,12 +70,17 @@
 				font-size: 16px;
 				line-height: normal;
 
+				@include respond('xs') {
+					max-width: 340px;
+				}
+
 				@include respond('sm') {
+					max-width: 500px;
 					font-size: 17px;
 				}
 
 				@include respond('md') {
-					max-width: 400px;
+					max-width: 600px;
 					font-size: 20px;
 				}
 			}
@@ -79,7 +97,6 @@
 		
 			@include respond('sm') {
 				column-count: 3;
-				// column-gap: 1.5rem;
 			}
 		
 			@include respond('md') {

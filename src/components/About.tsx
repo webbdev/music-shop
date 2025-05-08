@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 
 const about = {
-	heading: "About Us",
+	heading: "О нас",
 	description: [
-		"We’re a team of passionate musicians helping our community make music. From quality gear to expert support, we’re here to keep you inspired. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus libero, tempus feugiat purus. Curabitur sagittis efficitur massa varius.",
-		"Ut maximus convallis orci, sit amet facilisis risus auctor nec. Vestibulum diam augue, euismod sit amet auctor a, mattis et quam. Aenean congue mollis eros quis condimentum. Donec tincidunt congue dolor, id sagittis eros finibus id. Proin at cursus libero, tempus feugiat purus."
+		"Мы — команда музыкантов, открывшая магазин в Митино, чтобы быть ближе к тем, кто любит музыку. С 2010 года мы не просто продаём, настраиваем и ремонтируем инструменты — мы делаем это с душой и вниманием к каждому клиенту.",
+		"Здесь вы найдёте не только новые музыкальные инструменты, но и сможете починить свой. В нашем магазине есть мастерская по ремонту струнных музыкальных инструментов. Мы тщательно настраиваем все поступающие гитары, укулеле и другие струнные инструменты, доводя их до максимально удобного состояния для игры.",
+		"Это особенно важно для бюджетных гитар, которые часто приходят с фабрики в неудобном состоянии: струны высоко, лады перекрывают друг друга и дребезжат. Мы приводим их в идеальное состояние, и после нашей доводки даже недорогие инструменты становятся такими же удобными, как дорогие.",
+		"У нас можно не только купить инструмент, но и получить честный совет, помощь в выборе и поддержку после покупки. Мы понимаем, как важно, чтобы ваш инструмент звучал и играл наилучшим образом. Это наша работа — делать музыку доступной и удобной для всех."
 	]
 }
 

@@ -79,13 +79,13 @@ const HeroBanner = () => {
 			<div className="banner-container">
 				<div className="banner-inner">
 					<div className="image image-1">
-						<img ref={image1Ref} src={banner} alt="Banner 1" />
+						<img ref={image1Ref} src={banner} alt="Баннер 1" title="Инструменты, которые вдохновляют" />
 					</div>
 					<div className="image image-2">
-						<img ref={image2Ref} src={banner2} alt="Banner 2" />
+						<img ref={image2Ref} src={banner2} alt="Баннер 2" title="Каждая гитара — настроена и готова к игре" />
 					</div>
 					<div className="image image-3">
-						<img ref={image3Ref} src={banner3} alt="Banner 3" />
+						<img ref={image3Ref} src={banner3} alt="Баннер 3" title="Ремонт, настройка, обучение — всё в одном месте" />
 					</div>
 				</div>
 			</div>

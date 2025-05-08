@@ -10,7 +10,7 @@ const Contact = () => {
 					transition={{ duration: 1, ease: 'easeOut' }}
 					viewport={{ once: true, amount: 0.3 }}
 				>
-					Get in Touch
+					Связаться с нами
 				</motion.h2>
 				<div className="content">
 					<motion.div 
@@ -24,29 +24,33 @@ const Contact = () => {
 
 							<div className="card-1">
 								<div className="sub-heading">
-									<span>Our Address</span>
+									<span>Наш Адрес</span>
 								</div>
 								<div>
-									<p>Haight St</p>
-									<p>San Francisco, CA, USA</p>
+									<p>Москва, район Митино,</p>
+									<p>ул. Митинская, д. 51</p>
+									<p>ТЦ «Тук-Тук», 2 этаж</p>
+									<p>(метро Пятницкое шоссе)</p>
 								</div>
 							</div>
 
 							<div className="card-2">
-								<div className="sub-heading"><span>For any questions, please call:</span></div>
+								<div className="sub-heading">
+									<span>Нужно что-то уточнить? Звоните:</span>
+								</div>
 								<p>
-									<a href="tel:+14155550132"> 1&nbsp;(415)&nbsp;555‑0132</a>
+									<a href="tel:+79775984082"> +7&nbsp;(977)&nbsp;598-40-82</a>
 								</p>
 							</div>
 						</div>
 						
 						<div className="card">
 							<div className="sub-heading">
-								<span>Opening Hours</span>
+								<span>Часы работы</span>
 							</div>
 							<div>
-								<p>Sun - Mon</p>
-								<p>10:00am - 10:00pm</p>
+								<p>Пн – Вс</p>
+								<p>12:00 - 21:00</p>
 							</div>
 						</div>
 					</motion.div>

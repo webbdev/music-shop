@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import { Product } from '../types/product';
 import Spinner from './Spinner';
 import { motion } from 'framer-motion';
+import Categories from './Categories';
 
 const ProductCardList: React.FC = () => {
 	const [products, setProducts] = useState<Product[]>([]);
@@ -47,9 +48,21 @@ const ProductCardList: React.FC = () => {
 					transition={{ duration: 1, ease: 'easeOut' }}
 					viewport={{ once: true, amount: 0.3 }}
 				>
-					<h2>What We Sell</h2>
-					<p>Instruments, accessories, and music essentials for every level.</p>
+					<h2>Что продаём</h2>
+					{/* <p>Инструменты и аксессуары для новичков, любителей и профессионалов.</p> */}
+					<p>В магазине — большой выбор инструментов и аксессуаров для начинающих, любителей и профессионалов.</p>
 				</motion.div>
+
+				<Categories />
+
+				<div className="intro product-gallery">
+					<h3>Галерея товаров</h3>
+					<div className="bottom-border">
+						{/* <p>Загляните к нам — здесь часть инструментов, доступных в наличии.</p> */}
+						<p>Наши инструменты — в магазине, живые и готовые к игре, ждут вас.</p>
+					</div>
+					
+				</div>
 
 				{/* Lazy load the entire product list */}
 				<div className="product-card-list">

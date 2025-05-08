@@ -2,19 +2,20 @@ import { motion } from "framer-motion";
 import BannerParallax from './BannerParallax';
 
 const services = {
-	heading: "What We Offer",
+	heading: "Услуги",
+	sub_heading: "Мы предлагаем полный спектр музыкальных услуг",
 	all_services: [
 		{
-			"title": "Sales",
-			"description": "Instruments, accessories, and all things music-find quality gear for every musician under one roof."
+			"title": "Продажа",
+			"description": "Поможем выбрать подходящий инструмент — от новичка до профи."
 		},
 		{
-			"title": "Repairs",
-			"description": "From minor fixes to full restorations, we’ll keep your instruments in top playing condition."
+			"title": "Ремонт",
+			"description": "Настройка, доводка, обслуживание и реставрация."
 		},
 		{
-			"title": "Lessons",
-			"description": "Personalized music lessons for all ages and skill levels-learn to play with confidence and joy."
+			"title": "Обучение",
+			"description": "Индивидуальные уроки: гитара (все типы), барабаны."
 		}
 	]
 }
@@ -31,6 +32,7 @@ const Services = () => {
 							transition={{ duration: 1, ease: 'easeOut' }}
 							viewport={{ once: true, amount: 0.3 }}
 						>{services.heading}</motion.h2>
+						{/* <p>{services.sub_heading}</p> */}
 					</div>
 					<div className="cards">
 						{services.all_services.map((service, index) =>

@@ -28,11 +28,11 @@
 			padding: 0 16px;
 			
 			@include respond('xs') {
-				max-width: 550px;
+				max-width: 580px;
 			}
 
 			@include respond('sm') {
-				max-width: 650px;
+				max-width: 680px;
 			}
 		
 			@include respond('md') {

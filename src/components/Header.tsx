@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const sections = ['about', 'products', 'services', 'contact'];
+// const sections = ['о нас', 'товары', 'услуги', 'контакты'];
 
 const Header: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +83,7 @@ const Header: React.FC = () => {
 									className={activeSection === '' ? 'active' : ''}
 									onClick={handleHomeClick}
 								>
-									Home
+									Главная
 								</a>
 							</li>
 							{sections.map((item, index) => (

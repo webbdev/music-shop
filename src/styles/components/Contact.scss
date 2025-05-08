@@ -36,7 +36,7 @@
 			text-align: center;
 
 			@include respond('sm') {
-				max-width: 760px;
+				max-width: 820px;
 			}
 
 			.cards {
@@ -53,7 +53,7 @@
 				@include respond('md') {
 					grid-template-columns: repeat(2, 1fr);
 					max-width: 100%;
-					gap: 200px;
+					gap: 180px;
 				}
 			
 				.card {
