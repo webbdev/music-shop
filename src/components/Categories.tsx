@@ -3,27 +3,27 @@ import { motion } from "framer-motion";
 const instrumentCategories = [
 	{
 		title: "Струнные",
-		description: ['Гитары, Укулеле', 'Домры, Балалайки, Гусли', 'и другие']
+		description: "гитары, укулеле, домры, балалайки, мандолина, банджо, лира, гусли, и другие"
 	},
 	{
 		title: "Смычковые",
-		description: ['Скрипки', 'Виолончели']
+		description: "скрипки, виолончель"
 	},
 	{
 		title: "Клавишные",
-		description: ['Цифровые пианино', 'Синтезаторы']
+		description: "цифровые пианино, синтезаторы"
 	},
 	{
 		title: "Духовые",
-		description: ['Саксофоны, Блокфлейты, Кларнеты', 'Дудуки, Свирели, Губные гармошки', 'Трости к ним и т.д.']
+		description: "губные гармошки, блокфлейты, свирели, дудук, саксофон, кларнет, трости к ним и т.д."
 	},
 	{
 		title: "Ударные",
-		description: ['Электронные барабаны', 'Детские установки, Дарбуки', 'Палочки и т.п.']
+		description: "цифровые барабаны, детские барабаны, дарбуки, барабанные палочки и т.п"
 	},
 	{
 		title: "Этнические",
-		description: ['Калимбы, Глюкофоны', 'и уникальные народные инструменты']
+		description: "калимбы, глюкофоны, и уникальные народные инструменты"
 	}
 ];
 
@@ -40,14 +40,10 @@ const Categories = () => {
 					transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.15 }}
 					viewport={{ once: true, amount: 0.2 }}
 				>
-					<h4>{cat.title}</h4>
-					
-					<ul>
-						{cat.description.map((item, i) => (
-							<li key={i}>{item}</li>
-						))}
-					</ul>
-					
+					<p>
+						<strong>{cat.title}: </strong> 
+						{cat.description}
+					</p>
 				</motion.div>
 			))}
 		</div>

@@ -19,6 +19,7 @@ const Map = () => {
 						loading="lazy"
 						style={{ border: 0, position: 'relative' }}
 						title="Yandex Map"
+						scrolling="no"
 					></iframe>
 				</div>
 			</div>
