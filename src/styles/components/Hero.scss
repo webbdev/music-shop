@@ -42,7 +42,6 @@
 			}
 
 			@include respond('md') {
-				// padding-bottom: 50px;
 				padding-bottom: 40px;
 			}
 
@@ -73,11 +72,11 @@
 				line-height: normal;
 
 				@include respond('sm') {
+					max-width: 100%;
 					font-size: 18px;
 				}
 
 				@include respond('md') {
-					max-width: 100%;
 					font-size: 24px;
 				}
 			}
