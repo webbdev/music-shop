@@ -11,8 +11,8 @@ const Hero = () => {
 				<div className="intro">
 					{/* <h1>Welcome to <br /> The Music Shop</h1> */}
 					{/* <p>A local hub for instruments, gear, and music advice.</p> */}
-					<h1>Добро пожаловать <br /> в Музыкальный магазин</h1>
-					<p>Центр инструментов, ремонта и обучения в Митино.</p>
+					<h1>Добро пожаловать</h1>
+					<p>В музыкальный магазин в Митино</p>
 				</div>
 			</div>
 

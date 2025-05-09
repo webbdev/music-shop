@@ -10,16 +10,50 @@ const Map = () => {
 			viewport={{ once: true, amount: 0.3 }}
 		>
 			<div className="container">
-				<iframe 
-					title="Google Map"
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2239.5795296807228!2d37.34915807639286!3d55.8526109731213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b547104e047edd%3A0xb70274ba7ef1937d!2sMitinskaya%20Ulitsa%2C%2051%2C%20Moskva%2C%20Russia%2C%20125368!5e0!3m2!1sen!2suk!4v1746716391443!5m2!1sen!2suk"
-					width="100%" 
-					height="400" 
-					style={{ border: 0 }} 
-					allowFullScreen 
-					loading="lazy" 
-					referrerPolicy="no-referrer-when-downgrade"
-				></iframe>
+				<div style={{ position: 'relative', overflow: 'hidden', height: '100%' }}>
+					<a
+						href="https://yandex.eu/maps/org/music_shop_mitino/216161022579/?utm_medium=mapframe&utm_source=maps"
+						style={{
+							color: '#eee',
+							fontSize: '12px',
+							position: 'absolute',
+							top: 0,
+						}}
+					>
+						Music-shop-Mitino
+					</a>
+					<a
+						href="https://yandex.eu/maps/213/moscow/category/music_store/184105910/?utm_medium=mapframe&utm_source=maps"
+						style={{
+							color: '#eee',
+							fontSize: '12px',
+							position: 'absolute',
+							top: '14px',
+						}}
+					>
+						Music store in Moscow
+					</a>
+					<a
+						href="https://yandex.eu/maps/213/moscow/category/manufacture_and_repair_of_musical_instruments/184105916/?utm_medium=mapframe&utm_source=maps"
+						style={{
+							color: '#eee',
+							fontSize: '12px',
+							position: 'absolute',
+							top: '28px',
+						}}
+					>
+						Manufacture and repair of musical instruments in Moscow
+					</a>
+					<iframe
+						src="https://yandex.com/map-widget/v1/org/music_shop_mitino/216161022579/?ll=37.351805%2C55.852556&z=16"
+						width="100%"
+						height="400"
+						allowFullScreen
+						loading="lazy"
+						style={{ border: 0, position: 'relative' }}
+						title="Yandex Map"
+					></iframe>
+				</div>
 			</div>
 		</motion.div>
 	)
