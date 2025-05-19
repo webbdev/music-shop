@@ -96,7 +96,7 @@ const ProductCardList: React.FC = () => {
 				{visibleCount < products.length && !loadingMore && (
 					<div className='button-container'>
 						<a className='button load-more' onClick={handleLoadMore}>
-							<span>Load More</span>
+							<span>Показать ещё</span>
 						</a>
 					</div>
 				)}

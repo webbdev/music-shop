@@ -68,7 +68,7 @@
 			border-top: 1px solid $primary-color;
 
 			@include respond('sm') {
-				padding: 0 1.5rem;
+				padding: 0 1.5rem 20px;
 				margin-bottom: 0;
 				border-right: 1px solid $primary-color;
 				border-top: none;
@@ -101,6 +101,17 @@
 					font-size: 24px;
 					margin-bottom: 24px;
 				}
+			}
+
+			.show-prices-btn {
+				margin: 20px auto 10px;
+				background: $primary-color;
+				color: #fff;
+				padding: 8px 20px;
+				border: none;
+				cursor: pointer;
+				font-size: 14px;
+				font-weight: 500;
 			}
 
 			.lesson-price-list {

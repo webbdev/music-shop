@@ -1,0 +1,89 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+@use '../abstracts/variables' as *;
+
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 5vh;
+
+	@include respond('md') {
+		padding-top: 6vh;
+	}
+
+	.modal {
+		background: #fff;
+		padding: 2rem;
+		max-height: 85vh;
+		overflow-y: auto;
+		width: 90%;
+		max-width: 600px;
+
+		@include respond('sm') {
+			max-width: 800px;
+		}
+
+		@include respond('md') {
+			max-height: 80vh;
+			max-width: 880px;
+			padding: 2.15rem 2rem;
+		}
+
+		h3 {
+			font-size: 24px;
+			margin-bottom: 20px;
+
+			@include respond('sm') {
+				font-size: 26px;
+			}
+
+			@include respond('md') {
+				font-size: 28px;
+				margin-bottom: 25px;
+			}
+		}
+
+		.repair-price-list {
+			text-align: left;
+			list-style: disc;
+			padding-left: 1.2rem;
+			font-size: 0.95rem;
+
+			li {
+				margin-bottom: 10px;
+
+				p {
+					font-size: 14px;
+
+					@include respond('sm') {
+						font-size: 15px;
+					}
+			
+					@include respond('md') {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+
+		button {
+			margin-top: 16px;
+			padding: 8px 25px;
+			background: $primary-color;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}	
+}
+  
+  
+  
+  

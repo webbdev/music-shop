@@ -1,29 +1,41 @@
+import { useState } from 'react';
 import { motion } from "framer-motion";
 import BannerParallax from './BannerParallax';
+import RepairListModal from './RepairListModal';
 
-const services = {
+type Service = {
+	title: string;
+	description: string;
+	hasModal?: boolean;
+	prices?: { instrument: string; price: string }[];
+};
+
+const services: { heading: string; all_services: Service[] } = {
 	heading: "Услуги",
 	all_services: [
 		{
 			"title": "Продажа",
-			"description": "Поможем выбрать подходящий инструмент — от новичка до профи."
+			"description": "Поможем подобрать музыкальный инструмент под ваш уровень — от новичка до профессионала. В наличии как популярные, так и редкие этнические инструменты. Если чего-то нет — с радостью попробуем найти под заказ."
 		},
 		{
-			"title": "Ремонт",
-			"description": "Настройка, доводка и обслуживание."
+			"title": "Ремонт и настройка",
+			"description": "В магазине работает собственная мастерская. Настраиваем и доводим струнные инструменты до идеального состояния — даже недорогие гитары после настройки становятся удобными в игре.",
+			"hasModal": true
 		},
 		{
 			"title": "Обучение",
-			"description": "Индивидуальные уроки гитары (всех типов) и барабанов. Удобное время и никакой привязки к абонементам.",
+			"description": "Проводим индивидуальные занятия по гитаре (акустика, классика, электрогитара, бас) и барабанам. Удобный график, без абонементов и обязательств.",
 			"prices": [
-				{ instrument: "Урок на гитаре", price: "1200 ₽" },
-				{ instrument: "Урок на барабанах", price: "1500 ₽" }
+				{ instrument: "Урок на гитаре", price: "1200\u00a0₽" },
+				{ instrument: "Урок на барабанах", price: "1500\u00a0₽" }
 			]
 		}
 	]
 }
 
 const Services = () => {
+	const [isRepairModalOpen, setRepairModalOpen] = useState(false);
+
 	return (
 		<section id="services">
 			<div className="container">
@@ -49,6 +61,16 @@ const Services = () => {
 								<p className='sub-heading'>{service.title}</p>
 								<p className="card-description">{service.description}</p>
 
+								{service.hasModal && (
+									<button 
+										type="button"
+										className="show-prices-btn" 
+										onClick={() => setRepairModalOpen(true)}
+									>
+										Показать цены на ремонт
+									</button>
+								)}
+
 								{/* Отображение цен, если есть */}
 								{service.prices && (
 									<ul className="lesson-price-list">
@@ -67,6 +89,8 @@ const Services = () => {
 				</div>
 			</div>
 			<BannerParallax className="grayscale" />
+
+			<RepairListModal isOpen={isRepairModalOpen} onClose={() => setRepairModalOpen(false)} />
 		</section>
 	)
 }
