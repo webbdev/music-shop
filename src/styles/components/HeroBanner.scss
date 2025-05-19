@@ -71,13 +71,13 @@
   					will-change: transform;
 				}
 
-				&.image-2 {
-					display: none;
+				// &.image-2 {
+				// 	display: none;
 
-					@include respond('xs') {
-						display: block;
-					}
-				}
+				// 	@include respond('xs') {
+				// 		display: block;
+				// 	}
+				// }
 			}
 		}
 	}

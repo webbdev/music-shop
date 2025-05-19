@@ -21,14 +21,21 @@
 			text-align: center;
 			margin-bottom: 16px;
 			
-			p {
+			p.small-text {
 				font-size: 14px;
-				margin: 0 auto 10px;
+				margin: 0 auto;
+
+				@include respond('sm') {
+					font-size: 15px;
+				}
 
 				@include respond('md') {
 					font-size: 16px;
 				}
 
+				strong {
+					font-weight: 600;
+				}
 			}
 		}
 	
@@ -65,19 +72,45 @@
 			}
 
 			p {
-				max-width: 280px;
 				margin: 0 auto 5px;
 				text-align: center;
 				font-size: 18px;
-				line-height: normal;
 
 				@include respond('sm') {
-					max-width: 100%;
 					font-size: 18px;
 				}
 
 				@include respond('md') {
 					font-size: 24px;
+				}
+			}
+		}
+
+		.description {
+			margin: 40px auto 0;
+			padding: 0 16px;
+	
+			@include respond('xs') {
+				max-width: 580px;
+			}
+
+			@include respond('sm') {
+				max-width: 680px;
+				margin-top: 45px;
+			}
+		
+			@include respond('md') {
+				max-width: 680px;
+				margin-top: 65px;
+				padding: 0;
+			}
+
+			p {
+				margin-bottom: 1.25rem;
+
+				@include respond('md') {
+					font-size: 18px;
+					margin-bottom: 1.75;
 				}
 			}
 		}

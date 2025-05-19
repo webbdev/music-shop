@@ -3,7 +3,6 @@ import ProductCard from './ProductCard';
 import { Product } from '../types/product';
 import Spinner from './Spinner';
 import { motion } from 'framer-motion';
-import Categories from './Categories';
 
 const ProductCardList: React.FC = () => {
 	const [products, setProducts] = useState<Product[]>([]);
@@ -42,27 +41,33 @@ const ProductCardList: React.FC = () => {
 		<section id="products">
 			<div className="container">
 				<motion.div 
-					className="intro"
+					className="content"
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 1, ease: 'easeOut' }}
 					viewport={{ once: true, amount: 0.3 }}
 				>
-					<h2>Что продаём</h2>
-					<p>В нашем магазине — широкий выбор музыкальных инструментов и аксессуаров: от популярных моделей до редких находок. Например:</p>
+					<h2>Что мы продаём</h2>
+					<p>Кроме самых популярных струнных инструментов — гитар, укулеле, струн и различных аксессуаров к ним — у нас в продаже есть и более редкие этнические инструменты:</p>
+
+					<div className='list'>
+						<p><strong>Этнические струнные:</strong> балалайка, домра, мандолина, банджо, лира, гусли&nbsp;и&nbsp;др.</p>
+						<p><strong>Смычковые:</strong> скрипки, виолончель</p>
+						<p><strong>Клавишные:</strong> цифровые пианино и синтезаторы</p>
+						<p><strong>Духовые:</strong> губные гармошки, блокфлейты, свирели, дудук, саксофон, кларнет, трости&nbsp;к&nbsp;ним&nbsp;и&nbsp;т.д.</p>
+						<p><strong>Ударные:</strong> цифровые барабаны, детские барабаны, дарбуки, барабанные&nbsp;палочки и т.п.</p>
+						<p>Разные этнические инструменты, которые не вписываются в указанные категории: калимбы, глюкофоны&nbsp;и&nbsp;др.</p>
+					</div>
+
+					<div className="text">
+						<p>A eсли нужного инструмента у нас нет, то мы с радостью постараемся найти его специально для вас, звоните!</p>
+					</div>
 				</motion.div>
 
-				<Categories />
-
-				<div className='intro'>
-					<p>Если вы не нашли редкий инструмент, который ищете, мы с радостью поможем найти его для вас — звоните! :)</p>
-				</div>
-
-				<div className="intro product-gallery">
+				<div className="product-gallery-intro">
 					<h3>Галерея товаров</h3>
 					<div className="bottom-border">
-						{/* <p>Загляните к нам — здесь часть инструментов, доступных в наличии.</p> */}
-						<p>Наши инструменты — в магазине, живые и готовые к игре, ждут вас.</p>
+						<p>Кадры из нашего магазина</p>
 					</div>
 				</div>
 

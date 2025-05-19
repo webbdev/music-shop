@@ -4,13 +4,13 @@
 
 .category-cards {
 	max-width: 500px;
-	margin: 0 auto 40px;
+	margin: 0 auto 36px;
 
 	.category-card {
 		text-align: center;
 
 		p {
-			font-size: 15px;
+			font-size: 16px;
 			margin-bottom: 0.5rem;
 
 			@include respond('sm') {
@@ -18,23 +18,10 @@
 			}
 			
 			strong {
-				font-weight: 700;
-				// font-size: 1.25rem;
-				// color: $color-dark-red;
+				font-weight: 600;
 				margin-right: 2px;
 			}
 		}
-	
-		// ul {
-		// 	list-style-type: none;
-		// 	padding: 0;
-	
-		// 	li {
-		// 		font-size: 1rem;
-		// 		line-height: 1.5;
-		// 		margin-bottom: 0.5rem;
-		// 	}
-		// }
 	}
 }
 

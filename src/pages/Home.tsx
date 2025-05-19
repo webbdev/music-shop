@@ -1,5 +1,4 @@
 import { useOutletContext } from 'react-router-dom';
-import About from '../components/About';
 import Hero from '../components/Hero';
 import ProductCardList from '../components/ProductCardList';
 import Services from '../components/Services';
@@ -16,7 +15,6 @@ const Home = () => {
   return (
     <div className={isFadingOut ? 'animate-fadeOut' : 'animate-fadeIn'}>
       <Hero />
-      <About />
       <ProductCardList />
       <Services />
       <BottomSection />

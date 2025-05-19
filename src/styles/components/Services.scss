@@ -44,7 +44,7 @@
 				}
 	
 				@include respond('md') {
-					margin-bottom: 72px;
+					margin-bottom: 80px;
 				}
 			}
 		}
@@ -59,7 +59,7 @@
 	
 		@include respond('sm') {
 			grid-template-columns: repeat(3, 1fr);
-			max-width: 1150px;
+			max-width: 1200px;
 		}
 	
 		.card {
@@ -100,6 +100,19 @@
 				@include respond('md') {
 					font-size: 24px;
 					margin-bottom: 24px;
+				}
+			}
+
+			.lesson-price-list {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				padding-left: 1.2rem;
+				list-style: disc;
+				font-size: 0.95rem;
+				text-align: left;
+
+			 	li {
+					margin-bottom: 0.3rem;
 				}
 			}
 		}

@@ -29,7 +29,84 @@
 	.container {	
 		@include container;
 
-		.intro {
+		.content {
+			max-width: 400px;
+			margin: 0 auto;
+			text-align: center;
+			padding-bottom: 40px;
+
+			@include respond('xs') {
+				max-width: 500px;
+			}
+
+			@include respond('sm') {
+				max-width: 660px;
+				padding-bottom: 50px;
+			}
+
+			@include respond('md') {
+				max-width: 780px;
+				padding-bottom: 55px;
+			}
+
+			h2 {
+				margin-bottom: 36px;
+
+				@include respond('md') {
+					margin-bottom: 44px;
+				}
+			}
+
+			p {
+				margin: 0 auto;
+				text-align: center;
+				font-size: 16px;
+				line-height: 1.8;
+
+				@include respond('sm') {
+					font-size: 17px;
+				}
+
+				@include respond('md') {
+					font-size: 18px;
+				}
+			}
+
+			.list {
+				max-width: 360px;
+				margin: 24px auto;
+				text-align: center;
+
+				@include respond('xs') {
+					max-width: 480px;
+				}
+
+				@include respond('sm') {
+					max-width: 520px;
+				}
+
+				@include respond('md') {
+					// max-width: 500px;
+					margin: 26px auto;
+				}
+
+				p {
+					font-size: 15px;
+					margin-bottom: 0.5rem;
+		
+					@include respond('sm') {
+						font-size: 17px;
+					}
+					
+					strong {
+						font-weight: 600;
+						// margin-right: 2px;
+					}
+				}
+			}
+		}
+
+		.product-gallery-intro {
 			margin: 0 auto;
 			text-align: center;
 			padding-bottom: 20px;
@@ -41,53 +118,30 @@
 			@include respond('md') {
 				padding-bottom: 40px;
 			}
-
-			.bottom-border {
-				margin: 0 8px;
-				// padding-bottom: 32px;
-				// border-bottom: 4px solid $color-dark-red;
-			}
-
-			&.product-gallery {
-				margin-top: 30px;
-				h3 {
-					font-size: 40px;
-					margin-bottom: 16px;
-				}
-
-				p {
-					@include respond('sm') {
-						max-width: 420px;
-					}
-				}
-			}
-
-			h2 {
+			
+			h3 {
+				font-size: 30px;
 				margin-bottom: 16px;
 
+				@include respond('sm') {
+					font-size: 36px;
+				}
+
 				@include respond('md') {
+					font-size: 40px;
 					margin-bottom: 22px;
 				}
 			}
 
 			p {
-				max-width: 300px;
-				margin: 0 auto;
-				text-align: center;
 				font-size: 16px;
 				line-height: normal;
 
-				@include respond('xs') {
-					max-width: 500px;
-				}
-
 				@include respond('sm') {
-					max-width: 660px;
 					font-size: 17px;
 				}
 
 				@include respond('md') {
-					max-width: 780px;
 					font-size: 20px;
 				}
 			}

@@ -3,7 +3,6 @@ import BannerParallax from './BannerParallax';
 
 const services = {
 	heading: "Услуги",
-	sub_heading: "Мы предлагаем полный спектр музыкальных услуг",
 	all_services: [
 		{
 			"title": "Продажа",
@@ -11,11 +10,15 @@ const services = {
 		},
 		{
 			"title": "Ремонт",
-			"description": "Настройка, доводка, обслуживание и реставрация."
+			"description": "Настройка, доводка и обслуживание."
 		},
 		{
 			"title": "Обучение",
-			"description": "Индивидуальные уроки: гитара (все типы), барабаны."
+			"description": "Индивидуальные уроки гитары (всех типов) и барабанов. Удобное время и никакой привязки к абонементам.",
+			"prices": [
+				{ instrument: "Урок на гитаре", price: "1200 ₽" },
+				{ instrument: "Урок на барабанах", price: "1500 ₽" }
+			]
 		}
 	]
 }
@@ -32,7 +35,6 @@ const Services = () => {
 							transition={{ duration: 1, ease: 'easeOut' }}
 							viewport={{ once: true, amount: 0.3 }}
 						>{services.heading}</motion.h2>
-						{/* <p>{services.sub_heading}</p> */}
 					</div>
 					<div className="cards">
 						{services.all_services.map((service, index) =>
@@ -46,6 +48,19 @@ const Services = () => {
 							>
 								<p className='sub-heading'>{service.title}</p>
 								<p className="card-description">{service.description}</p>
+
+								{/* Отображение цен, если есть */}
+								{service.prices && (
+									<ul className="lesson-price-list">
+										{service.prices.map((item, idx) => (
+											<li key={idx}>
+												<p>
+													{item.instrument} — {item.price}
+												</p>
+											</li>
+										))}
+									</ul>
+								)}
 							</motion.div>
 						)}
 					</div>

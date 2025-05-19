@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const sections = ['about', 'products', 'services', 'contact'];
-// const sections = ['о нас', 'товары', 'услуги', 'контакты'];
+const sections = ['products', 'services', 'contact'];
+// const sections = ['товары', 'услуги', 'контакты'];
 
 const Header: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -69,10 +69,16 @@ const Header: React.FC = () => {
 		<header id="header" className={`header ${visible ? 'visible' : 'hidden'}`}>
 			<div className="container">
 				<div className="header-inner">
-					<div className="logo">
-						<a href="/" onClick={handleHomeClick}>
-							Music Shop<span>.</span>
-						</a>
+					<div className='left-side'>
+						<div className="logo">
+							<a href="/" onClick={handleHomeClick}>
+								Music Shop<span>.</span>
+							</a>
+						</div>
+					
+						<div className='phone'>
+							<a href="tel:+79775984082"> +7&nbsp;(977)&nbsp;598-40-82</a>
+						</div>
 					</div>
 
 					<nav className="navbar">
