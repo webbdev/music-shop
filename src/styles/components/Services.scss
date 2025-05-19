@@ -58,12 +58,16 @@
 		justify-content: center;
 
 		@include respond('xs') {
-			max-width: 600px;
+			max-width: 560px;
+		}
+
+		@include respond('sm') {
+			grid-template-columns: repeat(2, 1fr);
+			max-width: 900px;
 		}
 	
-		@include respond('sm') {
-			grid-template-columns: repeat(3, 1fr);
-			max-width: 1200px;
+		@include respond('md') {
+			max-width: 1100px;
 		}
 	
 		.card {
@@ -108,7 +112,7 @@
 			}
 
 			.show-prices-btn {
-				margin: 20px auto 10px;
+				margin: 22px auto 8px;
 				background: $primary-color;
 				color: #fff;
 				padding: 8px 20px;
@@ -116,18 +120,29 @@
 				cursor: pointer;
 				font-size: 14px;
 				font-weight: 500;
+
+				&:hover {
+					opacity: 0.9;
+				}
 			}
 
 			.lesson-price-list {
 				margin-top: 1rem;
 				margin-bottom: 1rem;
 				padding-left: 1.2rem;
-				list-style: disc;
+				list-style: none;
 				font-size: 0.95rem;
-				text-align: left;
 
 			 	li {
 					margin-bottom: 0.3rem;
+
+					strong {
+						font-weight: 500;
+
+						@include respond('sm') {
+							font-weight: 400;
+						}
+					}
 				}
 			}
 		}
