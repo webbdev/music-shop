@@ -56,6 +56,10 @@
 		max-width: 380px;
 		margin: 0 auto;
 		justify-content: center;
+
+		@include respond('xs') {
+			max-width: 600px;
+		}
 	
 		@include respond('sm') {
 			grid-template-columns: repeat(3, 1fr);
