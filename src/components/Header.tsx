@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 
-const sections = ['products', 'services', 'contact'];
-// const sections = ['товары', 'услуги', 'контакты'];
+type Section = {
+	id: string;
+	label: string;
+};
+  
+const sections: Section[] = [
+	{ id: 'products', label: 'Товары' },
+	{ id: 'services', label: 'Услуги' },
+	{ id: 'contact', label: 'Контакты' }
+];
 
 const Header: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +36,11 @@ const Header: React.FC = () => {
 			// Check which section is in view
 			let currentActive = '';
 			for (let section of sections) {
-				const element = document.getElementById(section);
+				const element = document.getElementById(section.id);
 				if (element) {
 					const rect = element.getBoundingClientRect();
 					if (rect.top <= 90 && rect.bottom >= 90) {
-						currentActive = section;
+						currentActive = section.id;
 						break;
 					}
 				}
@@ -92,14 +100,14 @@ const Header: React.FC = () => {
 									Главная
 								</a>
 							</li>
-							{sections.map((item, index) => (
-								<li key={index}>
+							{sections.map(({ id, label }) => (
+								<li key={id}>
 									<a
-										href={`#${item}`}
-										className={activeSection === item ? 'active' : ''}
-										onClick={(e) => handleLinkClick(e, item)}
+										href={`#${id}`}
+										className={activeSection === id ? 'active' : ''}
+										onClick={(e) => handleLinkClick(e, id)}
 									>
-										{item.charAt(0).toUpperCase() + item.slice(1)}
+										{label}
 									</a>
 								</li>
 							))}

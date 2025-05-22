@@ -15,7 +15,7 @@ const Hero = () => {
 			<div className='container'>
 				<div className="contact-info">
 					<p className="small-text">
-						<strong>Москва, район Митино, ул. Митинская, д.&nbsp;51</strong>, <br /> ТЦ «Тук-Тук», 2 этаж (5 минут пешком от <strong>метро Пятницкое шоссе</strong>)
+						<strong>Москва, район Митино, ул. Митинская, д.&nbsp;51</strong>, <br /> ТЦ «Тук-Тук», 2 этаж (5 минут пешком от <strong>метро&nbsp;Пятницкое&nbsp;шоссе</strong>)
 					</p>
 				</div>
 				<div className="intro">
