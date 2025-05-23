@@ -42,7 +42,7 @@
 			text-align: center;
 
 			h2 {
-				margin-bottom: 60px;
+				margin-bottom: 48px;
 
 				@include respond('sm') {
 					margin-bottom: 65px;
@@ -101,7 +101,7 @@
 
 			p.sub-heading {
 				color: rgba(37, 25, 14, 1);
-				font-size: $size-26;
+				font-size: $size-24;
 				font-weight: 600;
 				letter-spacing: -0.9px;
 				list-style: normal;
@@ -119,11 +119,15 @@
 			}
 
 			p {
-				font-size: $size-17;
+				font-weight: 400;
+
+				@include respond('sm') {
+					font-weight: 300;
+				}
 			}
 
 			.show-prices-btn {
-				margin: 26px auto 8px;
+				margin: 28px auto 8px;
 				background: $primary-color;
 				color: #fff;
 				padding: 8px 20px;
