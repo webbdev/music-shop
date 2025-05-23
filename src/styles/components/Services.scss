@@ -156,17 +156,12 @@
 			 	li {
 					margin-bottom: 4px;
 
-					p {
-						color: rgba(37, 25, 14, 1);
-						font-size: $size-17;
-					}
-
 					strong {
 						font-weight: 500;
 
-						// @include respond('sm') {
-						// 	font-weight: 400;
-						// }
+						@include respond('sm') {
+							font-weight: 400;
+						}
 					}
 				}
 			}
