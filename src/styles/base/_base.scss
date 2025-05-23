@@ -11,7 +11,6 @@
 }
 
 html {
-	// font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	scroll-behavior: smooth;
@@ -27,13 +26,12 @@ body {
 	background-color: $background-color;
 	color: $primary-color;
 	font-family: $font-family;
+	font-size: $size-16;
 	font-style: normal;
-	// font-weight: normal;
+	font-weight: normal;
 	font-optical-sizing: auto;
 	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
-	// font-size: 0.938rem;
-	// line-height: 1.45;
 }
 
 #root {
@@ -55,38 +53,50 @@ img {
 h1, h2, h3, h4 {
 	font-family: $font-family-2;
 	font-weight: 600;
-	letter-spacing: normal;
 	line-height: 1;
+	letter-spacing: normal;
 }
 
 h2 {
-	font-size: 36px;
+	font-size: $size-36;
 
 	@include respond('sm') {
-		font-size: 40px;
+		font-size: $size-48;
 	}
 
 	@include respond('md') {
-		font-size: 56px;
+		font-size: $size-56;
+	}
+}
+
+h3 {
+	font-size: $size-32;
+
+	@include respond('sm') {
+		font-size: $size-38;
+	}
+
+	@include respond('md') {
+		font-size: $size-44;
 	}
 }
 
 p {
-	color: $secondary-color;
 	font-family: $font-family;
-	font-size: $font-size-16;
-	font-weight: normal;
-	line-height: 1.6;
+	font-size: $size-17;
+	font-weight: 300;
+	line-height: 1.6em;
 	letter-spacing: normal;
-	text-wrap: pretty;
+	// text-wrap: pretty;
 
-	@include respond('sm') {
-		font-size: $font-size-16;
-		font-weight: 300;
-	}
+	// @include respond('sm') {
+	// 	font-size: $font-size-18;
+	// 	font-weight: 300;
+	// }
 
 	@include respond('md') {
-		font-size: 17px;
+		font-size: $size-18;
+		font-weight: 300;
 	}
 }
 
@@ -103,19 +113,6 @@ p {
 	0% {opacity: 1;}
 	100% {opacity: 0;}
 }
-
-// .animate-fadeIn {
-// 	-webkit-animation: fadeIn 1s ease-in;
-// 	animation: fadeIn 1s ease-in;
-// }
-// @-webkit-keyframes fadeIn {
-// 	0% {opacity: 0;}
-// 	100% {opacity: 1;}
-// }
-// @keyframes fadeIn {
-// 	0% {opacity: 0;}
-// 	100% {opacity: 1;}
-// }
 
 .animate-fadeIn {
 	-webkit-animation: fadeIn 1s ease-in;

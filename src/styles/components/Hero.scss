@@ -20,17 +20,21 @@
 		.contact-info {
 			text-align: center;
 			margin-bottom: 16px;
+
+			@include respond('md') {
+				margin-bottom: 18px;
+			}
 			
 			p.small-text {
-				font-size: 14px;
+				font-size: $size-14;
 				margin: 0 auto;
 
 				@include respond('sm') {
-					font-size: 15px;
+					font-size: $size-15;
 				}
 
 				@include respond('md') {
-					font-size: 16px;
+					font-size: $size-16;
 				}
 
 				strong {
@@ -54,40 +58,42 @@
 
 			h1 {
 				font-family: $font-family-2;
-				font-size: 40px;
-				font-weight: 600;
-				line-height: 1.06em;
-				letter-spacing: normal;
+				font-size: $size-40;
 				margin-bottom: 16px;
 
+				@include respond('xs') {
+					font-size: $size-46;
+				}
+
 				@include respond('sm') {
-					font-size: 44px;
+					font-size: $size-64;
 					margin-bottom: 18px;
 				}
 
 				@include respond('md') {
-					font-size: 75px;
+					font-size: $size-75;
 					margin-bottom: 22px;
 				}
 			}
 
 			p {
-				margin: 0 auto 5px;
+				margin: 0 auto;
 				text-align: center;
-				font-size: 18px;
+				font-size: $size-18;
 
 				@include respond('sm') {
-					font-size: 18px;
+					font-size: $size-20;
 				}
 
 				@include respond('md') {
-					font-size: 24px;
+					font-size: $size-24;
 				}
 			}
 		}
 
 		.description {
-			margin: 40px auto 0;
+			max-width: 400px;
+			margin: 45px auto 0;
 			padding: 0 16px;
 	
 			@include respond('xs') {
@@ -95,22 +101,21 @@
 			}
 
 			@include respond('sm') {
-				max-width: 680px;
-				margin-top: 45px;
+				max-width: 660px;
+				margin-top: 55px;
 			}
 		
 			@include respond('md') {
-				max-width: 680px;
+				max-width: 700px;
 				margin-top: 65px;
 				padding: 0;
 			}
 
 			p {
-				margin-bottom: 1.25rem;
+				margin-bottom: 1.5rem;
 
 				@include respond('md') {
-					font-size: 18px;
-					margin-bottom: 1.75;
+					margin-bottom: 1.75rem;
 				}
 			}
 		}

@@ -111,6 +111,14 @@
 				}
 			}
 
+			p {
+				@include respond('md') {
+					font-size: $size-17;
+					font-weight: 400;
+				}
+					
+			}
+
 			.show-prices-btn {
 				margin: 22px auto 8px;
 				background: $primary-color;
@@ -118,8 +126,12 @@
 				padding: 8px 20px;
 				border: none;
 				cursor: pointer;
-				font-size: 14px;
+				font-size: 15px;
 				font-weight: 500;
+
+				@include respond('md') {
+					margin-top: 26px;
+				}
 
 				&:hover {
 					opacity: 0.9;

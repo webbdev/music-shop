@@ -50,7 +50,7 @@
 
 		.repair-price-list {
 			text-align: left;
-			list-style: disc;
+			list-style: square;
 			padding-left: 1.2rem;
 			font-size: 0.95rem;
 
@@ -58,14 +58,15 @@
 				margin-bottom: 10px;
 
 				p {
-					font-size: 14px;
+					font-size: $size-15;
+					font-weight: 400;
 
-					@include respond('sm') {
-						font-size: 15px;
-					}
+					// @include respond('sm') {
+					// 	font-size: 15px;
+					// }
 			
 					@include respond('md') {
-						font-size: 16px;
+						font-size: $size-16;
 					}
 				}
 			}
@@ -78,7 +79,7 @@
 			color: #fff;
 			border: none;
 			cursor: pointer;
-			font-size: 14px;
+			font-size: 15px;
 			font-weight: 500;
 			opacity: 1;
 

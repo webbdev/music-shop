@@ -30,27 +30,32 @@
 		@include container;
 
 		.content {
-			max-width: 400px;
-			margin: 0 auto;
+			max-width: 100%;
 			text-align: center;
-			padding-bottom: 40px;
+			padding: 0 16px;
+			margin: 0 auto 45px;
 
 			@include respond('xs') {
-				max-width: 500px;
+				max-width: 720px;
 			}
 
 			@include respond('sm') {
-				max-width: 660px;
-				padding-bottom: 50px;
+				max-width: 780px;
+				margin-bottom: 50px;
 			}
 
 			@include respond('md') {
-				max-width: 780px;
-				padding-bottom: 55px;
+				max-width: 800px;
+				padding: 0;
+				margin-bottom: 55px;
 			}
 
 			h2 {
 				margin-bottom: 36px;
+
+				@include respond('sm') {
+					margin-bottom: 40px;
+				}
 
 				@include respond('md') {
 					margin-bottom: 44px;
@@ -60,47 +65,53 @@
 			p {
 				margin: 0 auto;
 				text-align: center;
-				font-size: 16px;
-				line-height: 1.8;
-
-				@include respond('sm') {
-					font-size: 17px;
-				}
-
-				@include respond('md') {
-					font-size: 18px;
-				}
 			}
 
-			.list {
-				max-width: 360px;
-				margin: 24px auto;
+			.category {
+				margin: 22px auto;
+				padding: 0;
 				text-align: center;
 
 				@include respond('xs') {
-					max-width: 480px;
+					padding: 0 20px;
 				}
 
 				@include respond('sm') {
-					max-width: 520px;
+					margin: 26px auto;
+					padding: 0 30px;
 				}
 
 				@include respond('md') {
-					// max-width: 500px;
-					margin: 26px auto;
+					margin: 28px auto;
+					padding: 0 26px;
 				}
 
-				p {
-					font-size: 15px;
-					margin-bottom: 0.5rem;
-		
-					@include respond('sm') {
-						font-size: 17px;
+				ul.category-list {
+					list-style: square;
+					margin-left: 30px;
+
+					@include respond('xs') {
+						margin-left: 30px;
 					}
-					
-					strong {
-						font-weight: 600;
-						// margin-right: 2px;
+
+					@include respond('sm') {
+						margin-left: 40px;
+					}
+
+					@include respond('md') {
+						margin-left: 45px;
+					}
+
+					li {
+						margin-bottom: 0.5rem;
+
+						p {
+							text-align: left;
+							
+							strong {
+								font-weight: 600;
+							}
+						}
 					}
 				}
 			}
@@ -109,7 +120,7 @@
 		.product-gallery-intro {
 			margin: 0 auto;
 			text-align: center;
-			padding-bottom: 20px;
+			padding-bottom: 28px;
 
 			@include respond('sm') {
 				padding-bottom: 36px;
@@ -120,29 +131,27 @@
 			}
 			
 			h3 {
-				font-size: 30px;
 				margin-bottom: 16px;
 
 				@include respond('sm') {
-					font-size: 36px;
+					margin-bottom: 18px;
 				}
 
 				@include respond('md') {
-					font-size: 40px;
 					margin-bottom: 22px;
 				}
 			}
 
 			p {
-				font-size: 16px;
+				font-size: $size-17;
 				line-height: normal;
 
 				@include respond('sm') {
-					font-size: 17px;
+					font-size: $size-18;
 				}
 
 				@include respond('md') {
-					font-size: 20px;
+					font-size: $size-20;
 				}
 			}
 		}
@@ -212,7 +221,7 @@
 				span {
 					font-family: $font-family-2;
 					font-weight: 600;
-					font-size: 18px;
+					font-size: $size-18;
 				}
 			}
 		}
