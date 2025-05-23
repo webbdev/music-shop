@@ -42,7 +42,7 @@
 			text-align: center;
 
 			h2 {
-				margin-bottom: 46px;
+				margin-bottom: 60px;
 
 				@include respond('sm') {
 					margin-bottom: 65px;
@@ -58,7 +58,6 @@
 	.cards {
 		display: grid;
 		grid-template-columns: 1fr;
-		// max-width: 380px;
 		margin: 0 auto;
 		justify-content: center;
 
@@ -102,9 +101,9 @@
 
 			p.sub-heading {
 				color: rgba(37, 25, 14, 1);
-				font-size: $size-24;
+				font-size: $size-26;
 				font-weight: 600;
-				letter-spacing: -0.7px;
+				letter-spacing: -0.9px;
 				list-style: normal;
 				margin-bottom: 18px;
 
@@ -121,7 +120,6 @@
 
 			p {
 				font-size: $size-17;
-				color: #000;
 			}
 
 			.show-prices-btn {
