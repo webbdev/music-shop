@@ -5,11 +5,11 @@
 #products {
 	background: $background-color;
 	padding-top: 35px;
-	padding-bottom: 50px;
+	padding-bottom: 40px;
 
 	@include respond('xs') {
 		padding-top: 40px;
-		padding-bottom: 70px;
+		padding-bottom: 60px;
 	}
 
 	@include respond('sm') {
@@ -175,8 +175,12 @@
 		}
 
 		.button-container {
-			margin: 30px auto 0;
+			margin: 15px auto 0;
 			text-align: center;
+
+			@include respond('xs') {
+				margin-top: 45px;
+			}
 
 			@include respond('sm') {
 				margin-top: 55px;
