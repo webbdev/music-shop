@@ -122,7 +122,7 @@
 				font-weight: 400;
 
 				@include respond('sm') {
-					font-weight: 300;
+					font-weight: 400;
 				}
 			}
 
@@ -157,10 +157,10 @@
 					margin-bottom: 4px;
 
 					strong {
-						font-weight: 500;
+						font-weight: 600;
 
 						@include respond('sm') {
-							font-weight: 400;
+							font-weight: 500;
 						}
 					}
 				}
