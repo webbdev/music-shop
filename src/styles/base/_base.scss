@@ -87,12 +87,6 @@ p {
 	font-weight: 300;
 	line-height: 1.6em;
 	letter-spacing: normal;
-	// text-wrap: pretty;
-
-	// @include respond('sm') {
-	// 	font-size: $font-size-18;
-	// 	font-weight: 300;
-	// }
 
 	@include respond('md') {
 		font-size: $size-18;
@@ -103,7 +97,7 @@ p {
 /* animation */
 .animate-fadeOut {
 	-webkit-animation: fadeOut 1s ease-out;
-	animation: fadeOut 1s ease-out;
+	animation: fadeOut 0.9s ease-out;
 }
 @-webkit-keyframes fadeOut {
 	0% {opacity: 1;}
@@ -116,15 +110,11 @@ p {
 
 .animate-fadeIn {
 	-webkit-animation: fadeIn 1s ease-in;
-	animation: fadeIn 1s ease-in;
+	animation: fadeIn 0.9s ease-in;
 }
 @keyframes fadeIn {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
-}
-
-.opacity-0 {
-	opacity: 0;
 }
 
 .animate-fadeUp {
@@ -138,5 +128,33 @@ p {
 	to {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+.animate-slideFadeIn {
+	animation: slideFadeIn 0.4s ease forwards;
+}
+@keyframes slideFadeIn {
+	from {
+		opacity: 0;
+	  	transform: translateY(30px); /* slide up */
+	}
+	to {
+	  	opacity: 1;
+	  	transform: translateY(0);
+	}
+}
+
+.animate-slideFadeOut {
+	animation: slideFadeOut 0.4s ease forwards;
+}
+@keyframes slideFadeOut {
+	from {
+	  	opacity: 1;
+	  	transform: translateY(0);
+	}
+	to {
+	  	opacity: 0;
+	  	transform: translateY(30px); /* slide down */
 	}
 }

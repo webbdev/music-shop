@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface RepairListModalProps {
 	isOpen: boolean;
@@ -47,11 +47,28 @@ const repairItems: string[] = [
 ];
 
 const RepairListModal: React.FC<RepairListModalProps> = ({ isOpen, onClose }) => {
-	if (!isOpen) return null;
+	const [shouldRender, setShouldRender] = useState(isOpen);
+	const [isFadingOut, setIsFadingOut] = useState(false);
+
+	useEffect(() => {
+		if (isOpen) {
+			setShouldRender(true);
+			setIsFadingOut(false);
+		} else {
+			setIsFadingOut(true);
+			const timeout = setTimeout(() => setShouldRender(false), 300); // match animation duration
+			return () => clearTimeout(timeout);
+		}
+	}, [isOpen]);
+
+	if (!shouldRender) return null;
 
 	return (
 		<div className="modal-overlay" onClick={onClose}>
-			<div className="modal repair-modal" onClick={(e) => e.stopPropagation()}>
+			<div
+				className={`modal repair-modal ${isFadingOut ? 'animate-slideFadeOut' : 'animate-slideFadeIn'}`}
+				onClick={(e) => e.stopPropagation()}
+			>
 				<h3>Цены на ремонт</h3>
 				<ul className="repair-price-list">
 					{repairItems.map((item, index) => (

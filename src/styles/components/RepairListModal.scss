@@ -61,10 +61,6 @@
 					font-size: $size-15;
 					font-weight: 400;
 
-					// @include respond('sm') {
-					// 	font-size: 15px;
-					// }
-			
 					@include respond('md') {
 						font-size: $size-16;
 					}
@@ -88,8 +84,4 @@
 			}
 		}
 	}	
-}
-  
-  
-  
-  
+} 
