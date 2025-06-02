@@ -5,9 +5,10 @@ import useWindowDimensions from '../hook/useWindowDimensions';
 interface ProductCardProps {
 	product: Product;
 	index: number;
+	onImageClick?: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, index, onImageClick }) => {
 	const imageRef = useRef<HTMLImageElement | null>(null);
 	const { width } = useWindowDimensions();
 	const isSmallDevice = width < 480;
@@ -51,6 +52,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
 					ref={imageRef}
 					src={product.image} 
 					alt={product.name}
+					onClick={isSmallDevice ? undefined : onImageClick}
+					style={{ cursor: 'pointer' }}
 				/>
 			</div>
 		</div>

@@ -1,14 +1,21 @@
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { Product } from '../types/product';
+import ImageModal from './ImageModal';
 import Spinner from './Spinner';
 import { motion } from 'framer-motion';
+import useWindowDimensions from '../hook/useWindowDimensions';
+
 
 const ProductCardList: React.FC = () => {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [loadingMore, setLoadingMore] = useState<boolean>(false);
 	const [visibleCount, setVisibleCount] = useState<number>(9);
+	const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
+	const { width } = useWindowDimensions();
+	const isDesktop = width >= 768;
+
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -96,10 +103,23 @@ const ProductCardList: React.FC = () => {
 								transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.2, }}
 								viewport={{ once: true, amount: 0.3 }}
 							>
-								<ProductCard key={product.id} product={product} index={index} />
+								<ProductCard
+									key={product.id}
+									product={product}
+									index={index}
+									onImageClick={() => setModalImage({ src: product.image, alt: product.name })}
+								/>
 							</motion.div>
 						))}
 				</div>
+
+				{modalImage && isDesktop && (
+					<ImageModal
+						src={modalImage.src}
+						alt={modalImage.alt}
+						onClose={() => setModalImage(null)}
+					/>
+				)}
 
 				{/* Spinner under the list */}
 				{loadingMore && (
