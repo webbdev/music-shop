@@ -76,5 +76,19 @@
 		"image": "/images/pr11.jpg", 
 		"description": "",
 		"images": [] 
+	},
+	{ 
+		"id": 12, 
+		"name": "Product 12", 
+		"image": "/images/pr12.jpg", 
+		"description": "",
+		"images": [] 
+	},
+	{ 
+		"id": 13, 
+		"name": "Product 13", 
+		"image": "/images/pr13.jpg", 
+		"description": "",
+		"images": [] 
 	}
 ]
