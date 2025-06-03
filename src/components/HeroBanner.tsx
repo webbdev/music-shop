@@ -4,6 +4,7 @@ import banner from "/images/banner-3.jpg";
 import banner2 from "/images/banner-1.jpg";
 import banner3 from "/images/banner-2.jpg";
 import Spinner from './Spinner';
+import ImageModal from './ImageModal';
 
 const HeroBanner = () => {
 	const image1Ref = useRef<HTMLImageElement | null>(null);
@@ -16,7 +17,10 @@ const HeroBanner = () => {
 
 	const { width } = useWindowDimensions();
 	const isSmallDevice = width < 480;
+	const isDesktop = width >= 768;
 
+	const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
+	
 	useEffect(() => {
 		const images = [banner, banner2, banner3];
 		let loadedCount = 0;
@@ -75,21 +79,31 @@ const HeroBanner = () => {
 	if (loading) return <Spinner />;
 
 	return (
-		<section className={`hero-banner ${fadeIn ? 'fade-in' : ''}`}>
-			<div className="banner-container">
-				<div className="banner-inner">
-					<div className="image image-1">
-						<img ref={image1Ref} src={banner} alt="Баннер 1" title="Инструменты, которые вдохновляют" />
-					</div>
-					<div className="image image-2">
-						<img ref={image2Ref} src={banner2} alt="Баннер 2" title="Каждая гитара — настроена и готова к игре" />
-					</div>
-					<div className="image image-3">
-						<img ref={image3Ref} src={banner3} alt="Баннер 3" title="Ремонт, настройка, обучение — всё в одном месте" />
+		<>
+			<section className={`hero-banner ${fadeIn ? 'fade-in' : ''}`}>
+				<div className="banner-container">
+					<div className="banner-inner">
+						<div className="image image-1" onClick={() => setModalImage({ src: banner, alt: "Баннер 1 - музыкальные инструменты" })}>
+							<img ref={image1Ref} src={banner} alt="Баннер 1 - музыкальные инструменты" title="Инструменты, которые вдохновляют" />
+						</div>
+						<div className="image image-2" onClick={() => setModalImage({ src: banner2, alt: "Баннер 2 - музыкальные инструменты" })}>
+							<img ref={image2Ref} src={banner2} alt="Баннер 2 - музыкальные инструменты" title="Каждая гитара — настроена и готова к игре" />
+						</div>
+						<div className="image image-3" onClick={() => setModalImage({ src: banner3, alt: "Баннер 3 - музыкальные инструменты" })}>
+							<img ref={image3Ref} src={banner3} alt="Баннер 3 - музыкальные инструменты" title="Ремонт, настройка, обучение — всё в одном месте" />
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+
+			{modalImage && isDesktop && (
+				<ImageModal
+					src={modalImage.src}
+					alt={modalImage.alt}
+					onClose={() => setModalImage(null)}
+				/>
+			)}
+		</>
 	);
 };
 

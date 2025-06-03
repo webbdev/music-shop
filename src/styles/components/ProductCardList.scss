@@ -22,11 +22,6 @@
 		padding-bottom: 80px;
 	}
 
-	// @include respond('lg') {
-	// 	padding-top: 72px;
-	// 	padding-bottom: 85px;
-	// }
-
 	.container {	
 		@include container;
 

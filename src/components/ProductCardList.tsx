@@ -6,7 +6,6 @@ import Spinner from './Spinner';
 import { motion } from 'framer-motion';
 import useWindowDimensions from '../hook/useWindowDimensions';
 
-
 const ProductCardList: React.FC = () => {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
@@ -15,7 +14,6 @@ const ProductCardList: React.FC = () => {
 	const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
 	const { width } = useWindowDimensions();
 	const isDesktop = width >= 768;
-
 
 	useEffect(() => {
 		const fetchProducts = async () => {
