@@ -50,14 +50,17 @@
 			border: 2px solid $primary-color;
 			background: $color-light-grey;
 			color: $primary-color;
-			font-size: 26px;
 			cursor: pointer;
 			box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-			line-height: 1;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			transition: all 0.4s ease;
+			padding: 0;
+
+			svg {
+				pointer-events: none;
+			}
 
 			&:hover {
 				border: 2px solid $color-light-grey;
@@ -66,5 +69,4 @@
 			}
 		}
 	}
-
 }
