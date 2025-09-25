@@ -18,9 +18,9 @@
 	}
 
 	.container {
-		@include container;
 		padding: 0;
-
+		@include container;
+		
 		@include respond('sm') {
 			padding: 0 2rem;
 		}
